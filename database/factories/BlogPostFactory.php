@@ -22,4 +22,11 @@ class BlogPostFactory extends Factory
             'content' => fake()->paragraphs(5, true),
         ];
     }
+
+    public function unverified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'title' => 'New title',
+        ]);
+    }
 }
