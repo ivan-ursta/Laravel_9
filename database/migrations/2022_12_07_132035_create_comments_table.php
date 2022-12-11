@@ -23,7 +23,7 @@ return new class extends Migration
                 $table->text('content');
             }
 
-            $table->foreignId('blog_post_id')->constrained();
+            $table->foreignId('blog_post_id')->constrained()->cascadeOnDelete();
             //$table->foreignId('blog_post_id')->nullable()->constrained();
         });
     }
