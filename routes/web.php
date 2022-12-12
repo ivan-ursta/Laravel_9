@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/secret', [HomeController::class, 'secret'])
+    ->name('secret')
+    ->middleware('can:home.secret');
+
 Route::get('/', [HomeController::class, 'home'])
     ->name('home.index');
     //->middleware('auth');
