@@ -20,6 +20,7 @@ class BlogPostFactory extends Factory
         return [
             'title' => fake()->sentence(10),
             'content' => fake()->paragraphs(5, true),
+            'created_at' => fake()->dateTimeBetween('-3 months'),
         ];
     }
 
@@ -27,6 +28,7 @@ class BlogPostFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'title' => 'New title',
+
         ]);
     }
 }
